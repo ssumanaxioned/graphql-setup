@@ -1,18 +1,22 @@
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+import Navbar from '../components/Navbar';
 
 export default function Home({ countries }) {
   return (
-    <ul>
-      {
-        countries.map(country => (
-          <li key={country.code}>
-            <p>Code: {country.code} </p>
-            <p>name: {country.name} </p>
-            <p>emoji: {country.emoji} </p>
-          </li>
-        ))
-      }
-    </ul>
+    <div className='home'>
+      <Navbar />
+      <ul>
+        {
+          countries.map(country => (
+            <li key={country.code}>
+              <p>Code: {country.code} </p>
+              <p>name: {country.name} </p>
+              <p>emoji: {country.emoji} </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   )
 }
 
